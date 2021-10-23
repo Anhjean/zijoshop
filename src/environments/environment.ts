@@ -3,14 +3,21 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  prestashop: {
+    apiKey: 'RQ6HVF1E1GVREA54QS74MC2UE45PSERH',
+    imageApiKey: 'YCJEIKIHK68HIARSH2MXS75DG7M78TZX', // for loading image
+    shopUrl: 'https://zijoshop.com/api/',
+    unitFormat:{
+      defaultCurrency:'đ',
+      currencyPrecious:0,
+    },
+    defaultJSON: false,// set default output format
+  },
+  notiGatewayURL: "https://jl-family.com",
+  notiGatewayPrefix: '/notification',
+  remotePdbUrl: 'https://jean:Anhnh7383#@jl-family.com/couchdb/',
+  cdnUrl:'https://cdn.kiotthe.app',
 };
+environment.notiGatewayURL = `${environment.notiGatewayURL}${environment.notiGatewayPrefix}`;
 
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.

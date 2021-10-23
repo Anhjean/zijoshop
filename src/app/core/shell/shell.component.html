@@ -1,0 +1,125 @@
+<div
+  class="app-container relative bg-white"
+  [class.app-is-mobile]="mobileQuery.matches"
+>
+  <mat-toolbar class="app-toolbar bg-white max-w-78l mx-auto px-4 sm:px-6">
+    <div
+      class="
+        flex
+        justify-between
+        items-center
+        py-1
+        w-full
+        space-x-10
+        md:justify-start
+
+      "
+    >
+
+      <div class="-mr-2 -my-2 md:hidden">
+        <button
+          type="button"
+          class="
+            bg-white
+            rounded-md
+            p-2
+            inline-flex
+            items-center
+            justify-center
+            text-gray-400
+            hover:text-gray-500 hover:bg-gray-100
+            focus:outline-none
+            focus:ring-2
+            focus:ring-inset
+            focus:ring-indigo-500
+          "
+
+          aria-expanded="false"
+          (click)="snav.toggle()"
+        >
+          <span class="sr-only">Open menu</span>
+          <!-- Heroicon name: outline/menu -->
+          <svg
+            class="h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div class="flex justify-end md:justify-start ">
+        <a href="#">
+          <span class="sr-only">Workflow</span>
+          <img
+            class="h-8 w-auto sm:h-10"
+            src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+            alt=""
+          />
+        </a>
+      </div>
+      <!-- <h1 class="app-name">Responsive App</h1> -->
+      <!-- <div class="flex sm:hidden space-x-10">
+        <button mat-icon-button (click)="snav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div> -->
+      <div class="hidden md:flex md:justify-start  space-x-10">
+
+        <button  class="text-base font-medium text-gray-500 hover:text-indigo-700 focus:text-indigo-700">
+          <span>Bakery</span>
+        </button>
+        <button class="text-base font-medium text-gray-500 hover:text-indigo-700 focus:text-indigo-700" >
+          <span>Food</span>
+        </button>
+        <button class="text-base font-medium text-gray-500 hover:text-indigo-700 focus:text-indigo-700" >
+          <span>Fruit</span></button>
+      </div>
+      <button
+        mat-menu-item
+        (click)="requestPermission()"
+        *ngIf="!(subscription$ | async) && isEnabled"
+      >
+        <mat-icon>notifications_on</mat-icon>
+        <span>Enable alerts</span>
+      </button>
+      <button
+        mat-menu-item
+        (click)="requestUnsubscribe()"
+        *ngIf="subscription$ | async"
+      >
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disabled alerts</span>
+      </button>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container
+    class="app-sidenav-container"
+    [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
+  >
+    <mat-sidenav
+      #snav
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56"
+    >
+      <mat-nav-list>
+        <app-nav-content></app-nav-content>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="p-2">
+      <app-content></app-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

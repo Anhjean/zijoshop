@@ -1,0 +1,32 @@
+<section>
+  <!-- Swiper -->
+  <!-- <swiper
+    [slidesPerView]="1"
+    [spaceBetween]="50"
+    [navigation]="true"
+    [pagination]="{ clickable: true }"
+    [autoplay]="true"
+    [thumbs]="{ swiper: thumbsSwiper }"
+  >
+    <ng-template swiperSlide>Slide 1</ng-template>
+    <ng-template swiperSlide>Slide 2</ng-template>
+    <ng-template swiperSlide>Slide 3</ng-template>
+    <ng-template swiperSlide>Slide 4</ng-template>
+    <ng-template swiperSlide>Slide 5</ng-template>
+    <ng-template swiperSlide>Slide 6</ng-template>
+  </swiper> -->
+  <swiper
+    [config]="config"
+    (swiper)="onSwiper($event)"
+    (slideChange)="onSlideChange()"
+
+    [thumbs]="{ swiper: thumbsSwiper }"
+  >
+    <ng-template swiperSlide>Slide 1</ng-template>
+    <ng-template swiperSlide>Slide 2</ng-template>
+    <ng-template swiperSlide>Slide 3</ng-template>
+    <ng-template swiperSlide>Slide 4</ng-template>
+    <ng-template swiperSlide>Slide 5</ng-template>
+    <ng-template swiperSlide>Slide 6</ng-template>
+  </swiper>
+</section>

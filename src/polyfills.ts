@@ -63,3 +63,6 @@ import 'zone.js';  // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+
+/** This is for PouchDB */
+(window as any).global = window;
