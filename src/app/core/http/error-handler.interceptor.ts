@@ -11,7 +11,7 @@ import { environment } from '../../../environments/environment';
 
 /** Custom Services */
 import { Logger } from '../logger/logger.service';
-import { AlertService } from '../alert/alert.service';
+// import { AlertService } from '../alert/alert.service';
 
 /** Initialize Logger */
 const log = new Logger('ErrorHandlerInterceptor');
@@ -25,7 +25,9 @@ export class ErrorHandlerInterceptor implements HttpInterceptor {
   /**
    * @param {AlertService} alertService Alert Service.
    */
-  constructor(private alertService: AlertService) {  }
+  constructor(
+    // private alertService: AlertService
+    ) {  }
 
   /**
    * Intercepts a Http request and adds a default error handler.

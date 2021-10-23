@@ -1,0 +1,17 @@
+<!-- This example requires Tailwind CSS v2.0+ -->
+<section class="w-full flex justify-center align-middle py-6">
+<div class="max-w-3/4 flex flex-1 flex-row bg-white rounded overflow-hidden shadow-lg">
+    <div class="flex-1 flex-col gap-3">
+        <div class="flex-1 p-12">
+            <p class="text-5xl font-extrabold"> ABOUT US</p>
+            <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. </p>
+        </div>
+    </div>
+
+    <div class="flex-1 py-12">
+        
+        <app-team-member *ngFor="let member of team" title="{{member.title}}" name="{{member.name}}" picUrl="{{member.picUrl}}"></app-team-member>
+
+    </div>
+  </div>
+</section>

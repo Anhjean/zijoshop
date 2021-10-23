@@ -14,13 +14,15 @@ import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
 // encode base64 by btoa() function
-let keyEncode=btoa(`${environment.prestashop.apiKey}:`)
+let keyEncode=btoa(`${environment.shop.access_token}`)
 console.log('Key:',keyEncode);
 /** Http request options headers. */
 let httpOptions: { [key: string]: { [key: string]: string } } = {
   headers: {
-    'Authorization': `Basic ${keyEncode}`,
-    'Accept':'*/*',
+    'Authorization': `Bearer ${keyEncode}`,
+    // 'Accept':'*/*',
+    'Content-Type':'application/json',
+    'access-control-allow-origin':"*"
   }
 };
 
@@ -42,7 +44,8 @@ export class ApiPrefixInterceptor implements HttpInterceptor {
     if (
       !request.url.includes('http:') &&
       !request.url.includes('https:') &&
-      !request.url.includes('assets')
+      !request.url.includes('assets') &&
+      !request.url.includes('api/common')
     ) {
 
         // request = request.clone({
@@ -50,7 +53,7 @@ export class ApiPrefixInterceptor implements HttpInterceptor {
         //   setHeaders: httpOptions.headers
         // });
         request = request.clone({
-          url: environment.prestashop.shopUrl + request.url,
+          url: environment.shop.apiEndpoint + request.url,
           setHeaders: httpOptions.headers
         });
 

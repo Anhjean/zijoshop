@@ -1,0 +1,133 @@
+
+  <fuse-card
+    class="
+      flex flex-col
+      max-w-80
+      w-full
+      product-card
+    "
+    >
+    <div class="relative w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+      <div class="absolute flex flex-col top-0 right-0 p-3">
+        <button
+          mat-icon-button=""
+          class="mat-focus-indicator mat-icon-button mat-button-base"
+        >
+          <span class="mat-button-wrapper"
+            ><mat-icon
+              role="img"
+              class="
+                mat-icon
+                notranslate
+                icon-size-5
+                text-white text-opacity-50
+                mat-icon-no-color
+              "
+              aria-hidden="true"
+              data-mat-icon-type="svg"
+              data-mat-icon-name="heart"
+              data-mat-icon-namespace="heroicons_solid"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                fit=""
+                height="100%"
+                width="100%"
+                preserveAspectRatio="xMidYMid meet"
+                focusable="false"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                  clip-rule="evenodd"
+                ></path></svg></mat-icon></span
+          ><span
+            matripple=""
+            class="mat-ripple mat-button-ripple mat-button-ripple-round"
+          ></span
+          ><span class="mat-button-focus-overlay"></span></button
+        ><button
+          mat-icon-button=""
+          class="mat-focus-indicator mat-icon-button mat-button-base"
+        >
+          <span class="mat-button-wrapper"
+            ><mat-icon
+              role="img"
+              class="
+                mat-icon
+                notranslate
+                icon-size-5
+                text-white text-opacity-50
+                mat-icon-no-color
+              "
+              aria-hidden="true"
+              data-mat-icon-type="svg"
+              data-mat-icon-name="switch-horizontal"
+              data-mat-icon-namespace="heroicons_solid"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                fit=""
+                height="100%"
+                width="100%"
+                preserveAspectRatio="xMidYMid meet"
+                focusable="false"
+              >
+                <path
+                  d="M8 5a1 1 0 100 2h5.586l-1.293 1.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L13.586 5H8zM12 15a1 1 0 100-2H6.414l1.293-1.293a1 1 0 10-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L6.414 15H12z"
+                ></path></svg></mat-icon></span
+          ><span
+            matripple=""
+            class="mat-ripple mat-button-ripple mat-button-ripple-round"
+          ></span
+          ><span class="mat-button-focus-overlay"></span>
+        </button>
+      </div>
+      <!-- <img
+        src="assets/images/products/sneakers-01-320x200.jpg"
+        alt="Card cover image"
+        class="object-cover"
+      /> -->
+      <img
+        src="{{this.image_url}}"
+        alt="{{this.image_alt}}"
+        class="object-cover"
+      />
+    </div>
+    <div class="m-8 mb-0 ng-tns-c184-88 ng-star-inserted">
+      <div class="flex flex-col">
+        <div class="text-2xl leading-tight">
+          {{this.title}}
+        </div>
+        <div class="text-3xl font-semibold mt-2">{{this.price}}</div>
+      </div>
+      <!-- dành cho attribute -->
+      <hr class="border-b my-6" />
+      <!-- <div class="flex items-center text-md">
+        <span class="text-secondary whitespace-nowrap mr-3">Select a size:</span
+        ><span class="mr-2">39</span><span class="mr-2">40</span
+        ><span class="mr-2">41</span
+        ><span class="font-bold text-primary mr-2">42</span
+        ><span class="mr-2">43</span>
+      </div> -->
+       <!-- ---end--- -->
+      <div class="mt-6 -mx-8">
+        <button
+          mat-flat-button=""
+          class="
+            mat-focus-indicator
+            w-full
+            rounded-t-none
+            mat-flat-button mat-button-base mat-primary
+          "
+          tabindex="0"
+        >
+          <span class="mat-button-wrapper"> Add to Cart </span
+          ><span matripple="" class="mat-ripple mat-button-ripple"></span
+          ><span class="mat-button-focus-overlay"></span>
+        </button>
+      </div>
+    </div>
+    </fuse-card>

@@ -1,0 +1,41 @@
+<div class="w-full p-3">
+  <div class="flex flex-0 flex-col lg:flex-row overflow-hidden h-auto gap-x-10">
+    <div class="flex-0 w-80 md:w-48">
+      <img
+      class="w-full h-full object-cover object-center rounded-md"
+      src="{{picUrl}}"
+    />
+    </div>
+    
+    <div
+      class="
+        bg-white
+        rounded-b
+        lg:rounded-b-none lg:rounded-r
+        flex flex-col
+        justify-between
+        leading-normal
+      "
+    >
+      <div>
+        <p class="text-gray-900 font-bold text-xl">
+          {{ this.name }}
+        </p>
+        <p class="text-indigo-500 ftext-xl">
+          {{ this.title }}
+        </p>
+      </div>
+      <p class="text-grey-darker text-base">
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s.
+      </p>
+
+      <div class="flex flex-row gap-2">
+        <mat-icon svgIcon="feather:twitter"></mat-icon>
+        <mat-icon svgIcon="feather:linkedin"></mat-icon>
+      </div>
+    </div>
+  </div>
+  <hr/>
+</div>
